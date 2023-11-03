@@ -32,7 +32,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [AuthService,
   {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true}],

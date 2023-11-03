@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="top-bar">
+      <div class="buttons">
+        <button class="add-button" (click)="mostrarVentanaEscenarioEmergente = true"><strong>Añadir Escenario</strong></button>
+      </div>
+      <div>
+        <input type="text" class="search-input" placeholder="Buscar..." [(ngModel)]="searchTerm" >
+      </div>
+      <div class="filter-option">
+        <span>Filtrar por:</span>
+        <select class="filter-select" [(ngModel)]="filterOption" (ngModelChange)="applyFilters()">
+          <option value="nombre">Orden Alfabético</option>
+          <option value="cantidadMe">Menor Cantidad</option>
+          <option value="cantidadMa">Mayor Cantidad</option>
+        </select>
+      </div>
+    </div>
+    <div class="inventory-container">
+    <table class="inventory-table">
+      <thead>
+        <tr>
+          <th>Nombre del Escenario</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let escenario of filteredEscenario">
+          <td><strong>{{ escenario.nombre }}</strong></td>
+          <td><strong>{{ escenario.fecha }}</strong></td>
+          <td><strong>{{ escenario.hora }}</strong></td>
+          <td class="button-cell">
+            <div class="button-group">
+                <button class="delete-button"><strong>Eliminar</strong></button>
+
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <app-agregar *ngIf="mostrarVentanaEscenarioEmergente" (cerrarVentana)="mostrarVentanaEscenarioEmergente = false"></app-agregar>
+  

@@ -1,0 +1,20 @@
+<div class="add-product-dialog">
+    <h2 class="confirmacion-header">Agregar Disponibilidad Escenario Deportivo</h2>
+    <div class="input-container">
+      <label for="name">Escenario Deportivo:</label>
+      <input id="name" type="text" name="name" [(ngModel)]="newEscenarioName">
+    </div>
+    <div class="input-container">
+      <label for="brand">Fecha:</label>
+      <input id="brand" type="date" name="brand" [(ngModel)]="newEscenarioDate">
+    </div>
+    <div class="input-container">
+      <label for="quantity">Horario:</label>
+      <input id="quantity" type="time"  id="datepicker"  id="datepicker" name="quantity" min="1" [(ngModel)]="newEscenarioTime">
+    </div>
+    <div class="button-group">
+      <button class="cancel-button" (click)="cerrarAgregar()">Cancelar</button>
+      <button class="accept-button" (click)="addEscenario()">Aceptar</button>
+    </div>
+  </div>
+  
